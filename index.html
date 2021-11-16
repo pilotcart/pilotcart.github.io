@@ -127,18 +127,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -184,6 +184,88 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/27/python%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="PilotCart">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PilotCart's land">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/27/python%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA/" class="post-title-link" itemprop="url">Python的格式化输出</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-10-27 19:45:55 / 修改时间：23:32:49" itemprop="dateCreated datePublished" datetime="2021-10-27T19:45:55+08:00">2021-10-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Python格式化输出"><a href="#Python格式化输出" class="headerlink" title="Python格式化输出"></a>Python格式化输出</h2><p>老是忘，所以记一下</p>
+<h3 id="占位符"><a href="#占位符" class="headerlink" title="占位符"></a>占位符</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&quot;cart&quot;</span></span><br><span class="line">age = <span class="number">20</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;my name is&quot;</span>, name)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;my name is %s, my age is %d.&quot;</span> % (name, age))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="f-String格式化"><a href="#f-String格式化" class="headerlink" title="f-String格式化"></a>f-String格式化</h3><p>相比较占位符的方式，python3.6版本新增了f-String格式化的方式，比较简单易</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;my name is <span class="subst">&#123;name&#125;</span>, my age is <span class="subst">&#123;age&#125;</span>.&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="NumPy数组格式化输出"><a href="#NumPy数组格式化输出" class="headerlink" title="NumPy数组格式化输出"></a>NumPy数组格式化输出</h3><p>Numpy数组格式化打印方法 （指定小数点位数）<code>np.set_printoptions(precision=3, suppress=True)</code><br>precision: 保留几位小数，后面不会补0<br>supress: 对很大/小的数不使用科学计数法 (true)<br>formatter: 强制格式化，后面会补0</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.random.random(<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;before set precision: \n&#x27;</span>,a)</span><br><span class="line"></span><br><span class="line">np.set_printoptions(precision=<span class="number">3</span>, suppress=<span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;after set precision: \n&#x27;</span>,a)</span><br><span class="line"></span><br><span class="line">np.set_printoptions(formatter=&#123;<span class="string">&#x27;float&#x27;</span>: <span class="string">&#x27;&#123;: 0.3f&#125;&#x27;</span>.<span class="built_in">format</span>&#125;)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;after set formatter: \n&#x27;</span>,a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">before <span class="built_in">set</span> options: </span><br><span class="line"> [ <span class="number">0.05856348</span> <span class="number">0.5400039</span> <span class="number">0.70000603</span>]</span><br><span class="line">after <span class="built_in">set</span> precision: </span><br><span class="line"> [ <span class="number">0.059</span> <span class="number">0.54</span> <span class="number">0.7</span>]</span><br><span class="line">after <span class="built_in">set</span> formatter: </span><br><span class="line"> [ <span class="number">0.059</span> <span class="number">0.540</span> <span class="number">0.700</span>]</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/22/Machine-Learning-Project-Checklist/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -207,10 +289,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-10-22 10:28:30 / 修改时间：19:43:39" itemprop="dateCreated datePublished" datetime="2021-10-22T10:28:30+08:00">2021-10-22</time>
+      <time title="创建时间：2021-10-22 10:28:30" itemprop="dateCreated datePublished" datetime="2021-10-22T10:28:30+08:00">2021-10-22</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-11-02 16:13:04" itemprop="dateModified" datetime="2021-11-02T16:13:04+08:00">2021-11-02</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -311,7 +399,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-22 10:25:39" itemprop="dateModified" datetime="2021-10-22T10:25:39+08:00">2021-10-22</time>
+        <time title="修改时间：2021-10-27 20:42:37" itemprop="dateModified" datetime="2021-10-27T20:42:37+08:00">2021-10-27</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -333,7 +421,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="端到端的机器学习项目"><a href="#端到端的机器学习项目" class="headerlink" title="端到端的机器学习项目"></a>端到端的机器学习项目</h2>
+          <h2 id="端到端的机器学习项目"><a href="#端到端的机器学习项目" class="headerlink" title="端到端的机器学习项目"></a>端到端的机器学习项目</h2><h3 id="Scikit-Learn设计"><a href="#Scikit-Learn设计" class="headerlink" title="Scikit-Learn设计"></a>Scikit-Learn设计</h3><p>Scikit-Learn 设计的 API 设计的非常好。它的主要设计原则是：</p>
+<ul>
+<li><strong>一致性</strong> 所有对象的接口一致且简单：<ol>
+<li>估计器（estimator）。任何可以基于数据集对一些参数进行估计的 对象都被称为估计器（比如， imputer 就是个估计器）。估计本身是通过 fit() 方法，只需要一个数据集作为参数（对于监督学习算 法，需要两个数据集；第二个数据集包含标签)。任何其它用来指 导估计过程的参数都被当做超参数（比如 imputer 的 strategy ）， 并且超参数要被设置成实例变量（通常通过构造器参数设置）。</li>
+<li>转换器（transformer）。一些估计器（比如 imputer ）也可以转换 数据集，这些估计器被称为转换器。API 也是相当简单：转换是通 过 transform() 方法，被转换的数据集作为参数。返回的是经过转换 的数据集。转换过程依赖学习到的参数，比如 imputer 的例子。所有的转换都有一个便捷的方法 fit_transform() ，等同于调用 fit() 再 transform() （但有时 fit_transform() 经过优化，运行的更快。</li>
+<li>预测器（predictor）。最后，一些估计器可以根据给出的数据集做 预测，这些估计器称为预测器。例如，上一章的 LinearRegression 模型就是一个预测器：它根据一个国家的人均 GDP 预测生活满意 度。预测器有一个 predict() 方法，可以用新实例的数据集做出相 应的预测。预测器还有一个 score() 方法，可用于评估测试集（如 果是监督学习算法的话，还要给出相应的标签）的预测质量。</li>
+</ol>
+</li>
+<li>**可检验 ** 所有估计器的超参数都可以通过实例的公共变量直接访问（比如， imputer.strategy ），并且所有估计器学习到的参数也可以通过在实 例变量名后加下划线来访问（比如， imputer.statistics_ ）</li>
+<li><strong>类不可扩散</strong> 数据集被表示成 NumPy 数组或 SciPy 稀疏矩阵，而不是自制的类。超参数只是普通的 Python 字符串或数字。 </li>
+<li>**可组合 **尽可能使用现存的模块。例如，用任意的转换器序列加上一个 估计器，就可以做成一个流水线，后面会看到例子。 </li>
+<li><strong>合理的默认值</strong> Scikit-Learn 给大多数参数提供了合理的默认值，很容易就能创建一个系统。</li>
+</ul>
+
       
     </div>
 
